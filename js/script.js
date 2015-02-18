@@ -1,20 +1,3 @@
-// var divs = document.getElementsByTagName('div');
-// for(var i=0; i<divs.length; i++) {
-//   divs[i].addEventListener("click", highlightThis);
-  
-//   divs[i].addEventListener("click", highlightThis, true);
-//   divs[i].addEventListener("click", highlightThis, false);
-// }
-
-// function highlightThis(event) {
-//     //event.stopPropagation();
-  
-//     var backgroundColor = this.style.backgroundColor;
-//     this.style.backgroundColor='yellow';
-//     alert(this.className);
-//     this.style.backgroundColor=backgroundColor;
-// }
-
 $(document).on("scroll",function(){
     if($(document).scrollTop()>200){
         $("header").removeClass("large-nav").addClass("small-nav");
@@ -24,16 +7,45 @@ $(document).on("scroll",function(){
 });
 
 $(document).ready(function(){
-	$('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
 
-	    var target = this.hash;
-	    var $target = $(target);
+	console.dir($('#section-3'));
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
+	$("a[href^='#'").click(function(event){
+		event.preventDefault();
+		var pageTarget = this.hash;
+		$("html, body").animate({ 
+			scrollTop: $(pageTarget).offset().top 
+		}, 1000)
 	});
+});
+
+$(document).on("scroll", function(){
+	if($(document).scrollTop() < 680){
+		console.log("sec 1");
+		$("#sec-1 a").css("color","#666666");
+		$("#sec-1 a").css("text-decoration","underline");
+		$("#sec-2 a").css("color","#ffffff");
+		$("#sec-2 a").css("text-decoration","none");
+		$("#sec-3 a").css("color","#ffffff");
+		$("#sec-3 a").css("text-decoration","none");
+			
+	}
+	else if($(document).scrollTop() < 1065){
+		console.log("sec 2");
+		$("#sec-2 a").css("color","#666666");
+		$("#sec-2 a").css("text-decoration","underline");
+		$("#sec-1 a").css("color","#ffffff");
+		$("#sec-1 a").css("text-decoration","none");
+		$("#sec-3 a").css("color","#ffffff");
+		$("#sec-3 a").css("text-decoration","none");
+	}
+	else{
+		console.log("sec 3");
+		$("#sec-3 a").css("color","#666666");
+		$("#sec-3 a").css("text-decoration","underline");
+		$("#sec-1 a").css("color","#ffffff");
+		$("#sec-1 a").css("text-decoration","none");
+		$("#sec-2 a").css("color","#ffffff");
+		$("#sec-2 a").css("text-decoration","none");
+	}
 });
