@@ -6,6 +6,11 @@
 @import "base";
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+$page-font:'Abel',sans-serif;
+/*@mixin shadow-color ($v1,$v2,$v3,$v4){
+
+}*/
+
 .page-header{
 	position:fixed;
 	top:0;
@@ -15,7 +20,7 @@
 	z-index: 2;
 	width:100%;
 	height:65px;
-	background-color:rgba(64,64,64,0.95);
+	background-color:rgba(0,0,0,0.95);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 	line-height: 65px;
 
@@ -26,7 +31,7 @@
 	}
 
 	#site-name a{
-		font-family: 'Abel',sans-serif;
+		font-family: $page-font;
 	  	font-size:24px;
 	  	color: #ffffff;
 	  	text-decoration: none;
@@ -51,12 +56,12 @@
 	float:right;
 	margin-right:5%;
 	height:100%;
-	width:40%;
+	width:50%;
 	margin:0 auto;
 
 	li, a {
 		display:inline-block;
-		font-family: 'Abel',sans-serif;
+		font-family: $page-font;
 		font-size:18px;
 		color: #ffffff;
 		text-decoration: none;
@@ -74,10 +79,10 @@
 	background-position: center center;
 	z-index: 1;
 	background-attachment: fixed;
-	background-image: url("../assets/bg2.jpeg");
+	/*background-image: url("../assets/bg2.jpeg");*/
 
 	h1{
-		font-family:'Abel',sans-serif;
+		font-family:$page-font;
 		font-size: 52px;
 		color:white;
 		text-align: center;
@@ -101,11 +106,11 @@
 
 
 .fixed-div.bg-1{
-	background-image: url("../assets/bg2.jpeg");
+	background-image: url("../assets/psycho.png");
 }
 
 .fixed-div.bg-2{
-	background-image: url("../assets/bg1.jpeg");
+	background-image: url("../assets/shining.jpg");
 }
 
 .scrolling-div{
@@ -123,13 +128,13 @@
 
 	p{
 		line-height: 240%;
-		font-family:'Abel',sans-serif;
+		font-family:$page-font;
 		color:white;
 	}
 }
 
 .scrolling-div.color-2 {
-  background-color: #336699;
+  background-color: #404040;
   color: #3d3536;
 }
 
@@ -225,7 +230,7 @@ footer {
 	margin-top:20px;
 	width: 200px;
 	height: 60px;
-	font-family: 'Abel',sans-serif;
+	font-family: $page-font;
 	font-size: 22px;
 	color: white;
 	text-align: center;
@@ -234,4 +239,120 @@ footer {
 	border: 0;
 	border-radius: 10px;
 	cursor:pointer;
+}
+
+.transparent-screen {
+	width: 100%;
+	height: 100%;
+	background: #000000;
+	position: fixed;
+	top: 0px;
+	opacity: 0.7;
+	z-index: 10;
+}
+
+.modal {
+	width: 640;
+	height: 360px;
+	background: #ffffff;
+	position: fixed;
+	top: 12%;
+	left:25%;
+	z-index: 11;
+}
+
+.modal-video{
+	display:none;
+}
+
+.carousel {
+  position: relative;
+  list-style: none;
+}
+
+.carousel li {
+  position: absolute;
+  width:100%;
+}
+
+.carousel > li:not(.active) {
+  display: none;
+}
+  
+@-webkit-keyframes next-in {
+  0% { 
+  	opacity: 0; 
+  	transform: translateX(100px);
+  }
+  100% { 
+  	opacity: 1; 
+	transform: translateX(0px);	
+  }
+}
+@-webkit-keyframes next-out {
+  0%   { 
+  	opacity: 1; 
+  	transform: translateX(0px);
+  }
+  100% { 
+  	opacity: 0; 
+  	transform: translateX(-100px);
+  }
+}
+@-webkit-keyframes prev-in {
+  0%   { 
+  	opacity: 0;
+  	transform: translateX(-100px); 
+
+  }
+  100% { 
+  	opacity: 1; 
+  	transform: translateX(0px);
+  }
+}
+@-webkit-keyframes prev-out {
+  0%   { 
+  	opacity: 1;
+  	transform: translateX(0px); 
+  }
+  100% { 
+  	opacity: 0;
+  	transform: translateX(100px); 
+  }
+}
+
+.carousel > li.next-in {
+  -webkit-animation: next-in 0.8s;
+}
+
+.carousel > li.next-out {
+  -webkit-animation: next-out 0.8s;
+}
+
+.carousel > li.prev-in {
+  -webkit-animation: prev-in 0.8s;
+}
+
+.carousel > li.prev-out {
+  -webkit-animation: prev-out 0.8s;
+}
+
+.fixed-div.slide1{
+	background-image: url("../assets/nolan3.jpg");
+}
+
+.fixed-div.slide2{
+	background-image: url("../assets/fincher.jpg");
+}
+
+.fixed-div.slide3{
+	background-image: url("../assets/tarantino.jpg");
+}
+
+.fixed-div.slide4{
+	background-image: url("../assets/wes2.jpg");
+}
+
+.fixed-div.slide5{
+	background-image: url("../assets/spike.jpeg");
 }
