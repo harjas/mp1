@@ -7,9 +7,9 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 $page-font:'Abel',sans-serif;
-/*@mixin shadow-color ($v1,$v2,$v3,$v4){
-
-}*/
+@mixin shadow-color ($v1,$v2,$v3,$v4){
+	box-shadow: $v1 $v2 $v3 $v4;
+}
 
 .page-header{
 	position:fixed;
@@ -133,7 +133,7 @@ $page-font:'Abel',sans-serif;
 	}
 }
 
-.scrolling-div.color-2 {
+.scrolling-div.scroll {
   background-color: #404040;
   color: #3d3536;
 }
@@ -146,10 +146,10 @@ footer {
 	width:100%;
 	height:70px;
 	padding: 4em 0;
-	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 50px rgba(0,0,0,0.5);
 	z-index: 2;
 	background-color:rgba(64,64,64,0.95);
-	font-family:'Abel', sans-serif;
+	font-family:$page-font;
 	color:white;
 
 	.row div{
@@ -214,18 +214,6 @@ footer {
 	color:#AAAAAA;
 }
 
-#bgvid{
-	position:fixed;
-	right:0;
-	bottom:0;
-	min-width: 100%;
-	width:100%;
-	height:auto;
-	background: transparent url("../assets/bg2.jpeg") no-repeat;
-	background-size: cover; 
-	z-index: -1000;
-}
-
 .video-button { 
 	margin-top:20px;
 	width: 200px;
@@ -234,7 +222,7 @@ footer {
 	font-size: 22px;
 	color: white;
 	text-align: center;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	text-shadow: 0 1px 2px rgba(0,0,0,0.25);
 	background: rgba(64,64,64,0.8);
 	border: 0;
 	border-radius: 10px;
@@ -252,7 +240,7 @@ footer {
 }
 
 .modal {
-	width: 640;
+	width: 640px;
 	height: 360px;
 	background: #ffffff;
 	position: fixed;
